@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Programação Estruturada</title>
+    
+</head>
+
+<body>
+    <h1>Entrada do Programa</h1>
+    <p id="resultado" style="font-size: 25px;" style="color: aqua;" style="text-align: center;"></p>
+
+    <script>
+        var matriz = [];
+        var l = 5;
+        var c = 5;
+        var comp = 0;
+
+        Matriz(l, c);
+
+        //Função matriz, recebe os valores e preenche na matriz.
+        function Matriz(a, b) {
+            var i = 0;
+            var j = 0;
+
+            if(comp == 0){
+
+                //recebendo os valores LINHA da matriz
+                for(i = 0; i < a; i++){
+                    matriz[i] = [];
+
+                    //recebendo os valores COLUNA da matriz
+                    for(j = 0; j < b; j++){
+                        matriz[i][j] = Number(prompt(`Digite o valor [ ${[i+1]} ] [ ${[j+1]} ] da matriz`));
+
+                    }
+
+                }
+                comp++;
+
+                return Matriz();
+            }
+        }
+
+        //Função responsável por exibir a matriz na página.
+        function exibirMatriz(matriz) {
+            var resposta = "";
+
+            if ( matriz.length == 0 ) {
+                resposta = "";
+
+            }else{
+
+                resposta = resposta + exibirLinha(matriz[0]) + "<br>";
+                resposta = resposta + exibirMatriz(matriz.slice(1)) + "<br>";
+            }
+            
+            return resposta;
+        }
+
+        //Função repsonsável por imprimir as linhas da matriz.
+        function exibirLinha(linha) {
+            var resposta = "  ";
+
+            if (linha.length == 0) {
+                resposta = "  ";
+
+            }else if(linha.length -1){
+
+                resposta = resposta + linha[0] + "|";
+                resposta = resposta + exibirLinha(linha.slice(1));
+            }else{
+
+                resposta = resposta + linha[0];
+                resposta = resposta + exibirLinha(linha.slice(1));
+            }
+
+            return resposta;
+        }
+        var exibir = exibirMatriz(matriz);
+        document.getElementById("resultado").innerHTML = exibir;
+
+
+    </script>
+</body>
+
+</html>

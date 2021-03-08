@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 4 - IMD(TI)</title>
+</head>
+<body>
+    
+    <script>
+
+        var a = prompt("Digite o primeiro numero");
+        var b = prompt("Digite o segundo numero");
+        var c = prompt("Digite o terceiro numero");
+
+        media(a, b, c);
+
+        function media(a, b, c){
+            var resultado = ((a*4) + (b*5) + (c*6))/15;
+
+            resultado = Math.ceil(resultado);//arredondando pra cima.
+            
+            document.write('A média Ponderada (4, 5 e 6) entre os números ' + a + " , " + b + " e " + c + ' é: ' + resultado);
+        }
+    </script>
+</body>
+</html>

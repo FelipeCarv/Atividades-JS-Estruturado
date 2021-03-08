@@ -1,0 +1,36 @@
+﻿<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Programação Estruturada</title>
+    </head>
+    <body>
+            <h1>Entrada do Programa</h1>
+         
+        <p id="resultado"></p>
+        <script>
+            var j = -1;
+
+            function comparar(a, b) {
+                return a - b;
+            }
+            executarExercicio();
+            function executarExercicio() {
+                var vetor = [];
+                while(j!=0){
+                    var j = prompt("Informe um número:");
+                    vetor.push(j);
+                } vetor.pop();
+            // implemente a partir daqui
+            // Exemplo de comando de entrada
+                var menor = Math.min.apply(null, vetor);
+                var maior = Math.max.apply(null, vetor);
+                var indiceMaior = vetor.indexOf(maior);
+                var indiceMenorr = vetor.indexOf(menor);
+
+
+                var r = "Os numeros inserido foram: " + vetor + "</br>" + "O menor numero é " + menor + " e o maior é " + maior + "</br>" + maior + " - " + menor + " = " + (maior - menor) + "</br>" + maior + " + " + menor + " = " + (maior + menor) + "</br>" + maior + " * " + menor + " = " + (maior * menor) + "</br>" + maior + " / " + menor + " = " +( maior / menor) + "</br>";
+            document.getElementById('resultado').innerHTML = r;
+        }
+        </script>
+    </body>
+</html>

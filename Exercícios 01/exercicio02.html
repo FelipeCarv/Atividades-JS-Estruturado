@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Programação Estruturada</title>
+</head>
+
+<body>
+    <h1>Entrada do Programa</h1>
+
+    <button onclick='executarExercicio()'>OK</button>
+    <p id="resultado"></p>
+
+
+    <script>
+        
+        function executarExercicio() {
+      
+            var notas = [];
+            var texto = "";
+
+            function numeros() {
+                var i;
+
+                total = Number(document.getElementById("total").value);
+                
+                for (i = 1; i <= total; i++) {
+
+                    texto = prompt("Entre com a " + i + "a nota.");
+                    notas.push(texto)
+                  
+                    imprimir()
+                }
+            }
+
+            //imprime a soma dos arrays
+            function imprimir() {
+                var soma = somarArray(notas);
+                var resposta = "Números = [" + notas + "] <br>";
+
+                resposta = resposta + "" + soma;
+                document.getElementById("resultado").innerHTML = resposta;
+            }
+
+            //Soma os arrays
+            function somarArray(x) { 
+                var retorno;
+
+                if (x.length != 0) {
+                    retorno = somarArray(x.slice(1));
+                } else {
+                    retorno = "";
+                }
+
+                return retorno;
+            }
+
+        }
+            //function solicitarNumeros() {
+
+            for (i = 0; i < notas.length; i++) {
+                texto = texto + "A nota " + (i + 1) + " foi " + notas[i] + "<br>";
+             }
+
+        document.getElementById("resultado").innerHTML = texto;
+
+
+    </script>
+</body>
+
+</html>

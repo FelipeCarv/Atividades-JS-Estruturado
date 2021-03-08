@@ -1,0 +1,53 @@
+</html>
+    </head>
+        <meta charset="UTF-8" />
+        <title>Programação Estruturada</title>
+</head>
+
+<body>
+
+    <h1>Formação de matriz (5x5)</h1>
+
+    <button onclick="preencher_matriz()">Clique aqui</button>
+
+    <script>
+        //RECEBE VALORES ENQUANTO A QUANTIDADE DE LINHAS FOR MENOR QUE 5
+        function valores(l, cont) {
+            if (l < 5) {
+                for (var i = 0; i < cont; i++) {
+                    matriz[l][i] = Number(prompt('Digite um Número:'));
+                }
+                valores(l + 1, i)
+            }
+        }
+
+        //IMPRIME A MATRIZ ENQUANTO A QUANTIDADE D ELINHAS FOR MENOR QUE 5
+        function imprime(l, cont) {
+            if (l < 5) {
+                for (var i = 0; i < cont; i++) {
+                    document.write(matriz[l][i] + ' | ');
+                }
+                document.write('<br>')
+                imprime(l + 1, i);
+
+            }
+        }
+
+        //DEFININDO O TAMANHO DA MATRIZ.
+        function preencher_matriz() {
+            matriz = new Array(5); 
+            for (var i = 0; i < 5; i++) {
+                matriz[i] = new Array(5);
+            }
+
+            l = 0;
+            cont = 5;
+
+            valores(l, cont);
+            imprime(l, cont);
+        }
+
+    </script>
+</body>
+
+</html>

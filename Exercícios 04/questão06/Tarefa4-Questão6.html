@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Programação Estruturada</title>
+</head>
+<body>
+    <h1>Entrada do Programa</h1>
+    X: <input type="number" id="x" value=""><br />
+    Y: <input type="number" id="y" value=""><br />
+    <button onclick='executarExercicio()'>OK</button>
+    <p id="resultado"></p>
+
+    <script>
+        function executarExercicio() {
+            var r = 0;
+            var somaI = 0;
+            var somaP = 0;
+            var x = Number(document.getElementById('x').value);
+            var y = Number(document.getElementById('y').value);
+
+            for (i = x; i <= y; i++) {
+                if (i % 2 == 0) {
+                    somaP = somaP + i;
+                } else {
+                    somaI = somaI + i;}
+            }
+            r = "A soma dos números pares entre " + x + " e " + y + " é: " + somaP + "</br>"+ "A soma dos números impares entre " + x + " e " + y + " é: " + somaI;
+            document.getElementById('resultado').innerHTML = r;
+        }
+    </script>
+</body>
+</html>
